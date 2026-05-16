@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8" />
+
+  <link
+  rel="icon"
+  type="image/x-icon"
+  href="favicon.ico"
+/>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <!-- SEO -->
+
+  <title>
+    NeckScale Studio | Mapeador de Escalas
+  </title>
+
+ <!-- SEO -->
+
+  <title>
+    NeckScale Studio | Escalas para Guitarra e Baixo
+  </title>
+
+  <meta
+    name="description"
+    content="Mapeador moderno de escalas para guitarra e baixo."
+  />
+
+  <meta
+    name="keywords"
+    content="escalas guitarra, modos gregos, fretboard, guitarra moderna"
+  />
+
+  <meta
+    name="author"
+    content="Tony"
+  />
+
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  <!-- OPEN GRAPH -->
+
+  <meta
+    property="og:title"
+    content="NeckScale Studio"
+  />
+
+  <meta
+    property="og:description"
+    content="Mapeador moderno de escalas para guitarra e baixo."
+  />
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:url"
+    content="https://neckscalestudio.com.br/"
+  />
+
+  <meta
+    property="og:image"
+    content="https://neckscalestudio.com.br/assets/preview.jpg"
+  />
+
+  <!-- CANONICAL -->
+
+  <link
+    rel="canonical"
+    href="https://neckscalestudio.com.br/"
+  />
+
+  <!-- FAVICON -->
+
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="favicon.ico"
+  />
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <div class="app">
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+      <h1>NeckScale Studio</h1>
+
+      <p>
+        Mapeador de escalas moderno
+        para guitarra e baixo.
+      </p>
+      <div class="hero-buttons">
+
+      <a
+        href="pages/sobre.html"
+        class="about-btn"
+      >
+        Sobre Mim
+      </a>
+
+      </div>
+
+    </header>
+
+
+    <!-- CONTROLES -->
+
+    <section class="controls glass">
+
+      <div class="control-group">
+
+        <label>Tonalidade</label>
+
+        <select id="keySelect"></select>
+
+      </div>
+
+      <div class="control-group">
+
+        <label>Escala / Modo</label>
+
+        <select id="scaleSelect"></select>
+
+      </div>
+
+      <div class="control-group">
+
+        <label>Instrumento</label>
+
+        <select id="instrumentSelect">
+
+          <option value="guitar6">
+            Guitarra 6 Cordas
+          </option>
+
+          <option value="guitar7">
+            Guitarra 7 Cordas
+          </option>
+
+          <option value="bass4">
+            Baixo 4 Cordas
+          </option>
+
+        </select>
+
+      </div>
+
+      <div class="control-group">
+
+        <label>
+          Casas:
+          <span id="fretValue">24</span>
+        </label>
+
+        <input
+          type="range"
+          min="12"
+          max="24"
+          value="24"
+          id="fretCount"
+        />
+
+      </div>
+
+      <div class="control-group">
+
+        <label>Visual</label>
+
+        <button
+          id="invertStringsBtn"
+          class="invert-btn"
+        >
+          Inverter Cordas
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================== -->
+    <!-- ADSENSE TOPO -->
+    <!-- COLE O CÓDIGO AQUI -->
+    <!-- ===================== -->
+
+    <section class="ad-section">
+
+      <div class="ad-placeholder">
+
+        Espaço Google AdSense
+
+      </div>
+
+    </section>
+
+
+    <!-- BRAÇO -->
+
+    <section class="neck-wrapper glass">
+
+      <div class="neck-scroll">
+
+        <svg id="fretboard"></svg>
+
+      </div>
+
+      <div class="watermark">
+        NECKSCALE STUDIO
+      </div>
+
+    </section>
+
+
+    <!-- CONTRIBUIÇÃO -->
+
+    <section class="support-section">
+
+      <div class="support-card glass">
+
+        <h3>
+          Ajude a manter a ferramenta gratuita
+        </h3>
+
+        <p>
+          Sua contribuição ajuda no
+          desenvolvimento de novas funções.
+        </p>
+
+        <a
+          href="https://apoia.se/neckscalestudio"
+          target="_blank"
+          class="support-btn"
+        >
+          Apoiar Projeto
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================== -->
+    <!-- ADSENSE FOOTER -->
+    <!-- COLE O CÓDIGO AQUI -->
+    <!-- ===================== -->
+
+    <section class="ad-section">
+
+      <div class="ad-placeholder">
+
+        Espaço Google AdSense
+
+      </div>
+
+    </section>
+
+
+    <!-- SEO CONTENT -->
+
+    <section class="seo-content glass">
+
+      <h2>
+        Escalas para guitarra e baixo
+      </h2>
+
+      <p>
+        Explore modos gregos, escalas
+        maiores, menores, pentatônicas,
+        menor melódica e menor harmônica.
+      </p>
+
+      <p>
+        Ferramenta ideal para improvisação,
+        composição e visualização musical.
+      </p>
+
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

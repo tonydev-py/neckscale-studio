@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    Sobre Mim | NeckScale Studio
+  </title>
+
+  <meta
+    name="description"
+    content="Conheça Tony, criador do NeckScale Studio."
+  />
+
+  <link
+    rel="stylesheet"
+    href="../style.css"
+  />
+
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <div class="app">
+
+    <section class="about-page glass">
+
+      <!-- FOTO -->
+
+      <div class="about-photo-area">
+
+        <!-- TROQUE PELA SUA FOTO -->
+
+        <img
+          src="../assets/tony.jpg"
+          alt="Tony"
+          class="about-photo"
+          draggable="false"
+        />
+
+      </div>
+
+
+      <!-- INFO -->
+
+      <div class="about-content">
+
+        <span class="about-tag">
+          GUITARRISTA • PROFESSOR • CRIADOR
+        </span>
+
+        <h1>
+          Sobre Mim
+        </h1>
+
+        <p>
+          Meu nome é Tony, sou músico,
+          professor de guitarra e apaixonado
+          por estudo musical, guitarra moderna
+          e desenvolvimento de ferramentas
+          que realmente ajudem músicos no
+          dia a dia.
+        </p>
+
+        <p>
+          A ideia dessa plataforma surgiu
+          da necessidade de ter uma forma
+          mais prática, dinâmica e moderna
+          de visualizar escalas, modos e
+          possibilidades no braço da guitarra,
+          sem depender de imagens estáticas
+          espalhadas pela internet.
+        </p>
+
+        <p>
+          Além de estudar guitarra diariamente,
+          também trabalho com ensino musical
+          e projetos relacionados à música,
+          sempre buscando evoluir tecnicamente
+          e musicalmente.
+        </p>
+
+        <p>
+          Tenho grande interesse no universo
+          da guitarra moderna e em estilos
+          como progressive metal, fusion,
+          ambient, rock e música instrumental,
+          explorando técnicas modernas,
+          improvisação, textura, composição
+          e sonoridades contemporâneas.
+        </p>
+
+        <p>
+          Também gosto da ideia de aplicar
+          elementos da guitarra moderna em
+          diferentes contextos musicais,
+          incluindo pop, gospel, rap e outros
+          estilos que busquem novas
+          possibilidades sonoras.
+        </p>
+
+        <p>
+          Esse projeto está sendo desenvolvido
+          de forma independente, conciliando
+          trabalho, estudo e vida pessoal,
+          então a evolução acontece gradualmente,
+          sempre buscando entregar algo realmente
+          útil e bem feito para músicos e
+          guitarristas.
+        </p>
+
+        <div class="about-list">
+
+          <div class="about-item">
+            • gravações
+          </div>
+
+          <div class="about-item">
+            • colaborações musicais
+          </div>
+
+          <div class="about-item">
+            • projetos instrumentais
+          </div>
+
+          <div class="about-item">
+            • participação em produções
+          </div>
+
+          <div class="about-item">
+            • trabalhos relacionados à
+            guitarra e composição
+          </div>
+
+        </div>
+
+        <p class="about-final">
+          Obrigado por acompanhar o projeto
+          e fazer parte dessa jornada. 🚀
+        </p>
+
+
+        <!-- REDES -->
+
+        <div class="social-buttons">
+
+          <!-- TROQUE PELOS SEUS LINKS -->
+
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            class="social-btn"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            class="social-btn"
+          >
+            TikTok
+          </a>
+
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            class="social-btn"
+          >
+            YouTube
+          </a>
+
+        </div>
+
+
+        <!-- CONTATO -->
+
+        <button
+          class="contact-btn"
+          onclick="openContactModal()"
+        >
+          Entrar em Contato
+        </button>
+
+
+        <!-- VOLTAR -->
+
+        <a
+          href="../index.html"
+          class="back-btn"
+        >
+          Voltar para plataforma
+        </a>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- POPUP -->
+
+  <div
+    class="contact-modal"
+    id="contactModal"
+  >
+
+    <div class="contact-box glass">
+
+      <h2>
+        Contato
+      </h2>
+
+      <p>
+        Clique abaixo para enviar um e-mail.
+      </p>
+
+      <!-- TROQUE PELO SEU EMAIL -->
+
+      <a
+         href="https://mail.google.com/mail/?view=cm&fs=1&to=tonypiresgtr@gmail.com"
+        target="_blank"
+        class="support-btn"
+      >
+         Enviar E-mail
+      </a>
+
+      <button
+        class="close-modal"
+        onclick="closeContactModal()"
+      >
+        Fechar
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function openContactModal(){
+
+      document
+        .getElementById("contactModal")
+        .classList.add("show-modal");
+
+    }
+
+    function closeContactModal(){
+
+      document
+        .getElementById("contactModal")
+        .classList.remove("show-modal");
+
+    }
+
+  </script>
+
+</body>
+</html>
