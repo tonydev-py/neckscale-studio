@@ -92,6 +92,14 @@ const TUNINGS = {
 
   bass4:[
     "E","A","D","G"
+  ],
+
+  ukulele:[
+    "G","C","E","A"
+  ],
+
+  cavaquinho:[
+    "D","G","B","D"
   ]
 
 };
@@ -203,8 +211,6 @@ function drawFretboard(){
     ...TUNINGS[instrumentSelect.value]
   ];
 
-  // INVERTER CORDAS
-
   if(invertStrings){
 
     tuning.reverse();
@@ -220,11 +226,22 @@ function drawFretboard(){
   const strings =
     tuning.length;
 
-  const fretWidth = 90;
+  // ===============================
+  // DIMENSÕES
+  // ===============================
+
+  const fretWidth = 82;
+
   const stringGap = 70;
 
+  const openArea = 55;
+
+  const nutX = 95;
+
   const width =
-    (frets + 1) * fretWidth + 140;
+    nutX +
+    frets * fretWidth +
+    120;
 
   const height =
     strings * stringGap + 90;
@@ -237,7 +254,7 @@ function drawFretboard(){
   fretboard.innerHTML = "";
 
   // ===============================
-  // SVG DEFS
+  // DEFS
   // ===============================
 
   const defs =
@@ -296,12 +313,13 @@ function drawFretboard(){
       "rect"
     );
 
-  neck.setAttribute("x",40);
+  neck.setAttribute("x",nutX);
+
   neck.setAttribute("y",35);
 
   neck.setAttribute(
     "width",
-    width - 80
+    width - nutX - 40
   );
 
   neck.setAttribute(
@@ -319,13 +337,45 @@ function drawFretboard(){
   fretboard.appendChild(neck);
 
   // ===============================
+  // PESTANA
+  // ===============================
+
+  const nut =
+    document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "rect"
+    );
+
+  nut.setAttribute(
+    "x",
+    nutX - 6
+  );
+
+  nut.setAttribute("y",35);
+
+  nut.setAttribute("width",10);
+
+  nut.setAttribute(
+    "height",
+    height - 70
+  );
+
+  nut.setAttribute(
+    "fill",
+    "#f3f4f6"
+  );
+
+  fretboard.appendChild(nut);
+
+  // ===============================
   // TRASTES
   // ===============================
 
-  for(let fret = 0; fret <= frets; fret++){
+  for(let fret = 1; fret <= frets; fret++){
 
     const x =
-      70 + fret * fretWidth;
+      nutX +
+      fret * fretWidth;
 
     const fretLine =
       document.createElementNS(
@@ -334,21 +384,24 @@ function drawFretboard(){
       );
 
     fretLine.setAttribute("x1",x);
+
     fretLine.setAttribute("y1",35);
 
     fretLine.setAttribute("x2",x);
-    fretLine.setAttribute("y2",height - 35);
+
+    fretLine.setAttribute(
+      "y2",
+      height - 35
+    );
 
     fretLine.setAttribute(
       "stroke",
-      fret === 0
-        ? "#ffffff"
-        : "#bdbdbd"
+      "#bdbdbd"
     );
 
     fretLine.setAttribute(
       "stroke-width",
-      fret === 0 ? "8" : "4"
+      "4"
     );
 
     fretboard.appendChild(fretLine);
@@ -370,7 +423,11 @@ function drawFretboard(){
         "line"
       );
 
-    string.setAttribute("x1",70);
+    string.setAttribute(
+      "x1",
+      openArea
+    );
+
     string.setAttribute("y1",y);
 
     string.setAttribute(
@@ -384,8 +441,6 @@ function drawFretboard(){
       "stroke",
       "#d8d8d8"
     );
-
-    // ESPESSURA REAL DAS CORDAS
 
     let thickness;
 
@@ -424,8 +479,9 @@ function drawFretboard(){
     if(fret > frets) return;
 
     const x =
-      70 + fret * fretWidth -
-      fretWidth / 2;
+      nutX +
+      (fret - 0.5) *
+      fretWidth;
 
     if(fret === 12 || fret === 24){
 
@@ -502,13 +558,17 @@ function drawFretboard(){
       if(scaleNotes.includes(note)){
 
         const x =
-          70 +
-          fret * fretWidth +
-          fretWidth / 2;
+          fret === 0
+          ? openArea - 8
+          : nutX +
+            (fret - 1) *
+            fretWidth +
+            fretWidth / 2;
 
         const y =
           70 +
-          stringIndex * stringGap;
+          stringIndex *
+          stringGap;
 
         const isRoot =
           note === root;
@@ -522,6 +582,7 @@ function drawFretboard(){
           );
 
         glow.setAttribute("cx",x);
+
         glow.setAttribute("cy",y);
 
         glow.setAttribute(
@@ -552,6 +613,7 @@ function drawFretboard(){
           );
 
         circle.setAttribute("cx",x);
+
         circle.setAttribute("cy",y);
 
         circle.setAttribute(
@@ -666,4 +728,3 @@ invertStringsBtn.addEventListener(
 // ===============================
 
 drawFretboard();
-
