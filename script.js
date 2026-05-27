@@ -14,7 +14,7 @@ document.addEventListener("keydown", e => {
 
   if(
     (e.ctrlKey &&
-    ["c","u","s"].includes(e.key.toLowerCase()))
+    ["u","s"].includes(e.key.toLowerCase()))
     ||
     e.key === "F12"
   ){
@@ -101,6 +101,300 @@ const TUNINGS = {
   cavaquinho:[
     "D","G","B","D"
   ]
+
+};
+
+// ===============================
+// INFORMAÇÕES DAS ESCALAS
+// ===============================
+
+const SCALE_INFO = {
+
+  "Maior":{
+
+    description:
+      "A escala maior é a base da música ocidental e possui sonoridade brilhante e estável.",
+
+    formula:
+      "1 2 3 4 5 6 7",
+
+    application:
+      "Usada em harmonias tradicionais, pop, rock, jazz e música clássica.",
+
+    chords:
+      "Maj7, 6, add9, triades maiores",
+
+    styles:
+      "Pop, Rock, Gospel, Fusion",
+
+    players:
+      "Eric Clapton, John Mayer, Steve Vai"
+
+  },
+
+  "Menor Natural":{
+
+    description:
+      "Escala com sonoridade melancólica e emocional.",
+
+    formula:
+      "1 2 b3 4 5 b6 b7",
+
+    application:
+      "Muito usada em solos emocionais e progressões menores.",
+
+    chords:
+      "m7, m9, m11",
+
+    styles:
+      "Rock, Metal, Blues, Pop",
+
+    players:
+      "David Gilmour, Slash, Santana"
+
+  },
+
+  "Pentatônica Menor":{
+
+    description:
+      "Escala simples e extremamente musical usada amplamente em solos.",
+
+    formula:
+      "1 b3 4 5 b7",
+
+    application:
+      "Ideal para improvisação e frases rápidas.",
+
+    chords:
+      "m7, power chords",
+
+    styles:
+      "Blues, Rock, Metal",
+
+    players:
+      "Jimi Hendrix, Slash, BB King"
+
+  },
+
+  "Menor Melódica":{
+
+    description:
+      "Escala sofisticada muito usada no jazz moderno.",
+
+    formula:
+      "1 2 b3 4 5 6 7",
+
+    application:
+      "Usada sobre acordes alterados e improvisação avançada.",
+
+    chords:
+      "mMaj7, alt, m6",
+
+    styles:
+      "Jazz Fusion, Progressive",
+
+    players:
+      "Allan Holdsworth, Frank Gambale"
+
+  },
+
+  "Menor Harmônica":{
+
+    description:
+      "Escala com sonoridade exótica e tensão clássica.",
+
+    formula:
+      "1 2 b3 4 5 b6 7",
+
+    application:
+      "Muito usada em metal neoclássico.",
+
+    chords:
+      "mMaj7, dim7",
+
+    styles:
+      "Metal, Música Clássica",
+
+    players:
+      "Yngwie Malmsteen, Jason Becker"
+
+  },
+
+  "Dom Dim":{
+
+    description:
+      "Escala dominante diminuta usada para tensão e resolução.",
+
+    formula:
+      "1 b2 b3 3 b5 5 6 b7",
+
+    application:
+      "Usada sobre acordes dominantes alterados.",
+
+    chords:
+      "7alt, 13b9",
+
+    styles:
+      "Jazz, Fusion",
+
+    players:
+      "Scott Henderson, Gambale"
+
+  },
+
+  "Jônio":{
+
+    description:
+      "Modo equivalente à escala maior.",
+
+    formula:
+      "1 2 3 4 5 6 7",
+
+    application:
+      "Usado em progressões maiores estáveis.",
+
+    chords:
+      "Maj7",
+
+    styles:
+      "Pop, Rock, Fusion",
+
+    players:
+      "Steve Lukather"
+
+  },
+
+  "Dórico":{
+
+    description:
+      "Modo menor com sexta maior muito usado no jazz e funk.",
+
+    formula:
+      "1 2 b3 4 5 6 b7",
+
+    application:
+      "Excelente para grooves menores.",
+
+    chords:
+      "m7, m9, m11",
+
+    styles:
+      "Jazz, Funk, Fusion",
+
+    players:
+      "Carlos Santana, John Frusciante"
+
+  },
+
+  "Frígio":{
+
+    description:
+      "Modo menor com segunda menor de sonoridade espanhola.",
+
+    formula:
+      "1 b2 b3 4 5 b6 b7",
+
+    application:
+      "Muito usado em riffs pesados.",
+
+    chords:
+      "sus(b9), m7",
+
+    styles:
+      "Metal, Flamenco",
+
+    players:
+      "Kirk Hammett, Marty Friedman"
+
+  },
+
+  "Lídio":{
+
+    description:
+      "Modo maior com quarta aumentada e sensação flutuante.",
+
+    formula:
+      "1 2 3 #4 5 6 7",
+
+    application:
+      "Muito usado em fusion e trilhas.",
+
+    chords:
+      "Maj7#11",
+
+    styles:
+      "Fusion, Soundtrack",
+
+    players:
+      "Joe Satriani, Vai"
+
+  },
+
+  "Mixolídio":{
+
+    description:
+      "Modo dominante com sétima menor.",
+
+    formula:
+      "1 2 3 4 5 6 b7",
+
+    application:
+      "Excelente sobre acordes dominantes.",
+
+    chords:
+      "7, 9, 13",
+
+    styles:
+      "Blues, Rock, Country",
+
+    players:
+      "SRV, Eric Johnson"
+
+  },
+
+  "Eólio":{
+
+    description:
+      "Modo equivalente à escala menor natural.",
+
+    formula:
+      "1 2 b3 4 5 b6 b7",
+
+    application:
+      "Muito usado em progressões menores.",
+
+    chords:
+      "m7",
+
+    styles:
+      "Rock, Metal",
+
+    players:
+      "Zakk Wylde"
+
+  },
+
+  "Lócrio":{
+
+    description:
+      "Modo instável com quinta diminuta.",
+
+    formula:
+      "1 b2 b3 4 b5 b6 b7",
+
+    application:
+      "Usado em acordes meio diminutos.",
+
+    chords:
+      "m7b5",
+
+    styles:
+      "Jazz Experimental",
+
+    players:
+      "John Scofield"
+
+  }
 
 };
 
@@ -225,6 +519,49 @@ function drawFretboard(){
 
   const strings =
     tuning.length;
+  
+
+// ===============================
+// INFO ESCALA
+// ===============================
+
+  const info =
+    SCALE_INFO[scaleName];
+
+  document.getElementById(
+    "scaleTitle"
+  ).textContent =
+    scaleName;
+
+  document.getElementById(
+    "scaleDescription"
+  ).textContent =
+    info.description;
+
+  document.getElementById(
+    "scaleFormula"
+  ).textContent =
+    info.formula;
+
+  document.getElementById(
+    "scaleApplication"
+  ).textContent =
+    info.application;
+
+  document.getElementById(
+    "scaleChords"
+  ).textContent =
+    info.chords;
+
+  document.getElementById(
+    "scaleStyles"
+  ).textContent =
+    info.styles;
+
+  document.getElementById(
+    "scalePlayers"
+  ).textContent =
+    info.players;
 
   // ===============================
   // DIMENSÕES
